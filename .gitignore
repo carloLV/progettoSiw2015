@@ -11,4 +11,8 @@ local.properties
 .DS_Store
 Thumbs.db
 Desktop.ini
+<<<<<<< HEAD
 .svn
+=======
+.svn
+>>>>>>> 91ae8f84ae16c5474376ddafdfc10ad9455db44f
