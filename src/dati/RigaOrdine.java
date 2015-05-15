@@ -10,6 +10,9 @@ public class RigaOrdine {
 	
 	private float costo;
 	
+	public RigaOrdine() {
+	}
+	
 	public RigaOrdine(Prodotto prod, int quantity){
 		this.prod=prod;
 		this.quantity=quantity;
