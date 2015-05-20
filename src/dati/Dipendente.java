@@ -22,6 +22,10 @@ public class Dipendente {
 		this.pwd=pwd;
 	}
 
+	public Dipendente() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getEmail() {
 		return email;
 	}
