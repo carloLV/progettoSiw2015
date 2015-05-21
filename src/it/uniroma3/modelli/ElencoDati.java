@@ -1,4 +1,6 @@
-package dati;
+//classe da eliminare. Bisogna scompattarla in facade per ogni operazione
+
+package it.uniroma3.modelli;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -21,7 +23,7 @@ public class ElencoDati extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 
-	private Map<String,Dipendente> utenti= new HashMap<String,Dipendente>();
+	
 
 	private Set<Ordine> ordini=new HashSet<Ordine>();//la lista deve essere oridnata in base alla data di inserimento
 
@@ -32,14 +34,7 @@ public class ElencoDati extends HttpServlet{
 	private Dipendente dipendenteCorrente;
 
 	//metodi autogenerati
-	public Map<String, Dipendente> getUtenti() {
-		return utenti;
-	}
-
-	public void setUtenti(Map<String, Dipendente> utenti) {
-		this.utenti = utenti;
-	}
-
+	
 	public Set<Ordine> getOrdini() {
 		return ordini;
 	}
@@ -58,46 +53,14 @@ public class ElencoDati extends HttpServlet{
 
 	//fine metodi autogenerati
 	//-------------------------------------------------
-
-	public void mostraFornitori(){
-		for (Fornitore f: this.fornitori.values()){
-			System.out.println("Elenco Fornitori:");
-			System.out.println(f.toString() + "/n");
-		}
-	}
-
-	public void mostraUtenti(){
-		for (Dipendente d: this.utenti.values()){
-			System.out.println("Elenco Utenti:");
-			System.out.println(d.toString() + "/n");
-		}		
-	}
-
-	public void mostraOrdini(){
-		for (Ordine o: this.ordini){
-			System.out.println("Elenco Ordini:");
-			System.out.println(o.toString() + "/n");
-		}
-	}
-	//forse meglio lasciare la visualizzazione alle pagine html-jsp
+	//metodi di visualizzazione delegati a pagine jsp
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException{
-		String nextPage=null;
-		
-		Dipendente u=new Dipendente();
-		u.setNome(request.getParameter("nome"));
-		u.setCognome(request.getParameter("cognome"));
-		u.setEmail(request.getParameter("email"));
-		if (request.getParameter("password").equals(request.getParameter("password2"))){
-			u.setPwd(request.getParameter("password"));
-			nextPage="/operazioneEffettuata.html";
-		}
-			
-		else nextPage="/pwdError.jsp";
+
 		
 		ServletContext application=getServletContext();
-		RequestDispatcher rd = application.getRequestDispatcher(nextPage);
+		RequestDispatcher rd = application.getRequestDispatcher("");
 		rd.forward(request, response);
 		return;
 	}

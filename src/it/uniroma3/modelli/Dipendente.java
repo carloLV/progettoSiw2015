@@ -1,4 +1,4 @@
-package dati;
+package it.uniroma3.modelli;
 
 import javax.persistence.*;
 
