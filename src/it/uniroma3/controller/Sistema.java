@@ -9,13 +9,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hsqldb.lib.OrderedHashSet;
 
-public class Sistema {
+@WebServlet("/sistema/*") 
+public class Sistema extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+
+	@EJB(beanName="rFacade")
+	private FacadeRegistrazione FacadeRegistrazione;
+
 	
 //	private ElencoDati elencoDati;
 
