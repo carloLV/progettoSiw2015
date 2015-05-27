@@ -1,6 +1,7 @@
 package it.uniroma3.controller.azioni;
 
 import javax.ejb.EJB;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.openejb.server.httpd.HttpRequest;
@@ -9,6 +10,7 @@ import it.uniroma3.controller.helper.HelperAccesso;
 import it.uniroma3.modelli.Dipendente;
 import it.uniroma3.modelli.FacadeRegistrazione;
 
+@WebServlet("/registrazione")
 public class Registrazione {
 	@EJB
 	private FacadeRegistrazione facade;

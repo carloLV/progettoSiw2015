@@ -2,12 +2,33 @@ package it.uniroma3.modelli;
 
 import java.util.Date;
 
-public class Prodotto {
-	String nome;
-	String codice;
-	Float costo;
-	Float quantita;
-	Date dataTerminazione;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+
+	@Entity
+	@NamedQuery(name = "findAllProdotti", query = "SELECT p FROM Prodotto p")
+	public class Prodotto {
+        
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	@Column(nullable = false)
+	private String nome;
+
+	private Float costo;
+	@Column(length = 2000)
+
+	private String descrizione;
+	private Date dataTerminazione;
+
+	@Column(nullable = false)
+	private String codice;
 
 
 	public Prodotto(String nome,String codice,Float costo){
@@ -45,17 +66,6 @@ public class Prodotto {
 	public void setCosto(Float costo) {
 		this.costo = costo;
 	}
-
-
-	public Float getQuantita() {
-		return quantita;
-	}
-
-
-	public void setQuantita(Float quantita) {
-		this.quantita = quantita;
-	}
-
 
 	public Date getData() {
 		return dataTerminazione;
