@@ -8,7 +8,7 @@ public class Dipendente {
 	@Id
 	private String email;
 	
-	@Id
+	@Column(nullable=false)
 	private String pwd;
 	
 	@Column(nullable=false, length=25)

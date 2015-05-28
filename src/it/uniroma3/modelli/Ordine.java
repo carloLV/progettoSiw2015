@@ -4,16 +4,31 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Ordine {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	@Column(nullable=false)
 	private String richiedente;
 	
 	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
 	
+	@Column(nullable=false)
 	private Date dataApertura;
 	
+	@Column
 	private Date dataChiusura;
 	
+	@Column
 	private Date dataEvasione;
 	
 	public Ordine(){

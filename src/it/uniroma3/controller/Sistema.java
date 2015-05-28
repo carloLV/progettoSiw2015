@@ -24,7 +24,7 @@ public class Sistema extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB(beanName="rFacade")
-	private FacadeRegistrazione FacadeRegistrazione;
+	private FacadeDipendente FacadeRegistrazione;
 
 	
 //	private ElencoDati elencoDati;

@@ -11,7 +11,6 @@ import javax.persistence.NamedQuery;
 
 
 	@Entity
-	@NamedQuery(name = "findAllProdotti", query = "SELECT p FROM Prodotto p")
 	public class Prodotto {
         
 	@Id
@@ -29,6 +28,13 @@ import javax.persistence.NamedQuery;
 
 	@Column(nullable = false)
 	private String codice;
+
+
+	
+	
+	public Prodotto() {
+		
+	}
 
 
 	public Prodotto(String nome,String codice,Float costo){
