@@ -21,11 +21,11 @@ public class ControllerProdotto {
 	private Prodotto prodotto;
 	private List<Prodotto> prodotti;
 	
-	@EJB   // (name="pFacade")
+	@EJB(name="pFacade")
 	private FacadeProdotto facadeProdotto;
 	
 	public String creaProdotto() {
-		this.prodotto = facadeProdotto.createProdotto(nome, codice, prezzo, descrizione);
+		this.prodotto = facadeProdotto.creaProdotto(nome, codice, prezzo, descrizione);
 		return("operazioneEffettuata.jsp");
 	
 	//else return ("Error.jsp"); 

@@ -24,7 +24,7 @@
 			</td>
 			<td>
 				<div>
-					<a href="inserisciProdotto.jsp"><button type="button"
+					<a href="registraProdotto.jsp"><button type="button"
 							class="btn btn-primary btn-lg">Nuovo prodotto</button></a>
 				</div>
 			</td>

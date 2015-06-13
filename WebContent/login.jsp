@@ -22,6 +22,7 @@
 			<div align="center">
 				<h1>Benvenuto!</h1>
 				<h2>Effettua il login per cominciare</h2>
+				<h4>Oppure <a href="registrazione.jsp">registrati</a> per cominciare!</h4>
 				<div class="form-group">
 					<label>Email</label>
 					<h:inputText value="#{controllerUtente.email}" required="true"

@@ -1,18 +1,18 @@
 package it.uniroma3.modelli;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.Column;
 
 
-	@Entity
-	public class Prodotto {
-        
+
+@Entity
+//@NamedQuery(name = "findAllProducts", query = "SELECT p FROM Product p")
+public class Prodotto{
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -20,93 +20,64 @@ import javax.persistence.NamedQuery;
 	@Column(nullable = false)
 	private String nome;
 
-	private Float costo;
+	private Float prezzo;
 	@Column(length = 2000)
 
 	private String descrizione;
-	private Date dataTerminazione;
 
-	@Column(nullable = false)
-	private String codice;
+	Prodotto() {
+	}
 
-
-	
-	
-	public Prodotto() {
-		
+	Prodotto(String nome, Float prezzo, String descrizione, String codice) {
+		this.nome = nome;
+		this.prezzo = prezzo;
+		this.descrizione = descrizione;
 	}
 
 
-	public Prodotto(String nome,String codice,Float costo){
-		this.nome=nome;
-		this.codice=codice;
-		this.costo=costo;
-	}
-
+	//getter e setter
 
 	public String getNome() {
 		return nome;
 	}
 
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
-	public String getCodice() {
-		return codice;
+	public Float getPrezzo() {
+		return prezzo;
 	}
 
-
-	public void setCodice(String codice) {
-		this.codice = codice;
+	public void setPrezzo(Float prezzo) {
+		this.prezzo = prezzo;
 	}
 
-
-	public Float getCosto() {
-		return costo;
+	public String getDescrizione() {
+		return descrizione;
 	}
 
-
-	public void setCosto(Float costo) {
-		this.costo = costo;
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
 	}
 
-	public Date getData() {
-		return dataTerminazione;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-
-	public void setData(Date data) {
-		this.dataTerminazione = data;
+	public Long getId() {
+		return id;
 	}
 
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((codice == null) ? 0 : codice.hashCode());
-		return result;
-	}
-
-
-	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Prodotto other = (Prodotto) obj;
-		if (codice == null) {
-			if (other.codice != null)
-				return false;
-		} else if (!codice.equals(other.codice))
-			return false;
-		return true;
-	}
+        Prodotto p = (Prodotto)obj;
+        return this.id.equals(p.getId());
+    }
+
+    public int hashCode() {
+         return this.id.hashCode();
+    }
+
+
 
 }

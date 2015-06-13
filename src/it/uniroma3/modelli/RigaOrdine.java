@@ -26,7 +26,7 @@ public class RigaOrdine {
 	public RigaOrdine(Prodotto prod, int quantity){
 		this.prod=prod;
 		this.quantity=quantity;
-		this.costoUnitario=prod.getCosto();
+		this.costoUnitario=prod.getPrezzo();
 		this.costo=this.costoUnitario*this.quantity;		
 	}
 
