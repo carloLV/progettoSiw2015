@@ -18,9 +18,9 @@ public class Ordine {
 	private Long id;
 	
 	@Column(nullable=false)
-	private String richiedente;
+	private Dipendente richiedente;
 	
-//	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
+	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
 	
 	@Column(nullable=false)
 	private Date dataApertura;
@@ -32,32 +32,32 @@ public class Ordine {
 	private Date dataEvasione;
 	
 	public Ordine(){
-		
 	}
 	
-	
-	
-	public String getRichiedente() {
+		
+
+
+	public Dipendente getRichiedente() {
 		return richiedente;
 	}
 
 
 
-	public void setRichiedente(String richiedente) {
-		this.richiedente = richiedente;
+	public void setRichiedente (Dipendente richiedente) {
+		this.richiedente=richiedente;
 	}
 
 
 
-//	public List<RigaOrdine> getRigheOrdine() {
-//		return righeOrdine;
-//	}
+	public List<RigaOrdine> getRigheOrdine() {
+		return righeOrdine;
+	}
 
 
 
-//	public void setRigheOrdine(List<RigaOrdine> righeOrdine) {
-//		this.righeOrdine = righeOrdine;
-//	}
+	public void setRigheOrdine(List<RigaOrdine> righeOrdine) {
+		this.righeOrdine = righeOrdine;
+	}
 
 
 
@@ -93,6 +93,7 @@ public class Ordine {
 
 	public void setDataEvasione(Date dataEvasione) {
 		this.dataEvasione = dataEvasione;
+		
 	}
 
 

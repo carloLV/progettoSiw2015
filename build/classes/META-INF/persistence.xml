@@ -5,10 +5,9 @@
 	<persistence-unit name="unit-dbProgetto" transaction-type="JTA">
 		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 		<jta-data-source>PostgreSQL Database</jta-data-source>
-		<!--<class>it.uniroma3.modelli.Prodotto</class>
+		<class>it.uniroma3.modelli.Prodotto</class>
 		<class>it.uniroma3.modelli.Fornitore</class>
 		<class>it.uniroma3.modelli.RigaOrdine</class>
-		-->
 		<class>it.uniroma3.modelli.Ordine</class>
 		<class>it.uniroma3.modelli.Dipendente</class>
 		<class>it.uniroma3.modelli.Amministratore</class>

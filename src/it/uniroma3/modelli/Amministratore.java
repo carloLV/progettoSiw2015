@@ -13,10 +13,10 @@ public class Amministratore extends Dipendente{
 		
 	}
 	
-	@Override
-	public void confermaOrdine(Ordine o){
-		o.setRichiedente(this.getEmail());
-		
-	}
+//	@Override
+//	public void confermaOrdine(Ordine o){
+//		o.setRichiedente(this.getEmail());
+//		
+//	}
 
 }

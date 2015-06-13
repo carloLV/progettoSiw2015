@@ -13,8 +13,10 @@ import it.uniroma3.modelli.FacadeDipendente;
 @ManagedBean
 public class ControllerDipendente {
 	
-	@ManagedProperty(value="#{param.email}")
+	@EJB(beanName="facadeD")
+	private FacadeDipendente facade;
 	
+	@ManagedProperty(value="#{param.email}")
 	private String email;
 	
 	private String pwd1;
@@ -26,9 +28,8 @@ public class ControllerDipendente {
 	private String cognome;
 	
 	private Dipendente dipendente;
-	
-	@EJB
-	private FacadeDipendente facade;
+
+	private Object dipendenti;
 	
 	public String creaDipendente(){
 		if (pwd1.equals(pwd2)){
@@ -38,20 +39,20 @@ public class ControllerDipendente {
 		else return ("Error.jsp");
 	}
 	
+	public String findDipendente(){
+		this.dipendente=facade.getDipendente(email);
+		return "operazioneEffettuata.jsp";
+	}
+	
 	public String findDipendente(String email){
 		this.dipendente=facade.getDipendente(email);
 		return "operazioneEffettuata.jsp";
 	}
 
-	public FacadeDipendente getFacade() {
-		return facade;
+	public String listaDipendenti(){
+		this.dipendenti=facade.getTuttiDipendenti();
+		return "visualizzaTuttiDipendenti.jsp";
 	}
-	
-
-	public void setFacade(FacadeDipendente facade) {
-		this.facade = facade;
-	}
-
 	public String getEmail() {
 		return email;
 	}

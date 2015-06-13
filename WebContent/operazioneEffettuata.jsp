@@ -5,7 +5,10 @@
 <title>Operazione Effettuata</title>
 </head>
 <body>
-<br><label>L'operazione è andata a buon fine. Cliccare per tornare alla pagina iniziale</label></br>
-<a href="index.html">Clicca qui</a>
+	<br>
+	<label>L'operazione è andata a buon fine. Cliccare per tornare
+		alla scelta delle operazioni</label>
+	</br>
+	<a href="faces/scegliOperazione.jsp"><button>Clicca qui</button></a>
 </body>
 </html>
