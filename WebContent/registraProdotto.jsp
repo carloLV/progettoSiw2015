@@ -22,12 +22,6 @@
 			<div><label>Descrizione</label>
 			<h:inputText value="#{controllerProdotto.descrizione}" id="descrizione" requiredMessage="This parameter is mandatory"/>
 			<h:message for="descrizione"/>  </div>
-			<div><label>Codice</label>
-			<h:inputText value="#{controllerProdotto.codice}" id="codice" requiredMessage="This parameter is mandatory"/>
-			<h:message for="codice"/> </div> 
-			<div><label>id</label>
-			<h:inputText value="#{controllerProdotto.id}" id="id" requiredMessage="This parameter is mandatory"/>
-			<h:message for="id"/> </div>
 			<div><h:commandButton value="Conferma" action="#{controllerProdotto.creaProdotto}"/>
 			<a href="index.html"><button class="btn">Annulla</button></a></div>
 </h:form>

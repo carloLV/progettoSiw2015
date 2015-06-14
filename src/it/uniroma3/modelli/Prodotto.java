@@ -28,7 +28,7 @@ public class Prodotto{
 	Prodotto() {
 	}
 
-	Prodotto(String nome, Float prezzo, String descrizione, String codice) {
+	Prodotto(String nome, Float prezzo, String descrizione) {
 		this.nome = nome;
 		this.prezzo = prezzo;
 		this.descrizione = descrizione;

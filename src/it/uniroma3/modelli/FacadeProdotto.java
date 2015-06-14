@@ -8,14 +8,17 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
 
-@Stateless(name="pFacade")
+@Stateless(name="facadeP")
 public class FacadeProdotto  {
 
 	@PersistenceContext(unitName="unit-dbProgetto" )
 	private EntityManager em;
 
-	public Prodotto creaProdotto(String nome, String codice, Float prezzo, String descrizione) {
-		Prodotto p = new Prodotto(nome, prezzo, descrizione, codice);
+	public Prodotto creaProdotto(String nome,  Float prezzo, String descrizione) {
+		Prodotto p = new Prodotto();
+		p.setNome(nome);
+		p.setPrezzo(prezzo);
+		p.setDescrizione(descrizione);
 		em.persist(p); 
 		return p;
 	}

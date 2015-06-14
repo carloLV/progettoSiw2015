@@ -17,15 +17,14 @@ public class ControllerProdotto {
 	private String nome;
 	private Float prezzo;
 	private String descrizione;
-	private String codice;
 	private Prodotto prodotto;
 	private List<Prodotto> prodotti;
 	
-	@EJB(name="pFacade")
+	@EJB(name="facadeP")
 	private FacadeProdotto facadeProdotto;
 	
 	public String creaProdotto() {
-		this.prodotto = facadeProdotto.creaProdotto(nome, codice, prezzo, descrizione);
+		this.prodotto = facadeProdotto.creaProdotto(nome, prezzo, descrizione);
 		return("operazioneEffettuata.jsp");
 	
 	//else return ("Error.jsp"); 
@@ -76,14 +75,6 @@ public class ControllerProdotto {
 
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
-	}
-
-	public String getCodice() {
-		return codice;
-	}
-
-	public void setCodice(String codice) {
-		this.codice = codice;
 	}
 
 	public Prodotto getProdotto() {

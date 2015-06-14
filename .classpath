@@ -73,7 +73,6 @@
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/openwebbeans-jsf-1.2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/openwebbeans-spi-1.2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/openwebbeans-web-1.2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/postgresql-9.4-1201.jdbc41.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/quartz-openejb-shade-2.2.1.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/serp-1.14.1.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/apache-tomee-jaxrs-1.7.1/lib/servlet-api.jar"/>
@@ -114,5 +113,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Giulia/postgresql-9.4-1201.jdbc41.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
