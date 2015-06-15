@@ -20,7 +20,8 @@
 			<div>
 				<h:commandButton value="Cerca"
 					action="#{controllerFornitore.findFornitore}" />
-				<a href="scegliOperazione.jsp"><button class="btn">Annulla</button></a> <br>
+				<a href="scegliOperazione.jsp">
+				<button class="btn">Annulla</button></a> <br>
 			</div>
 			<div><h:commandButton value="Elenco completo"
 					action="#{controllerFornitore.listaFornitori}" /></div>

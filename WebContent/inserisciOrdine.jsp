@@ -9,7 +9,7 @@
 <title>Crea Ordine</title>
 </head>
 <body>
-<f:view>
+<f:view>"WebContent/inserisciOrdine.jsp"
 		<h:form>
 		
 		</h:form>

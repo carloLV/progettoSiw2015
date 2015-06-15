@@ -69,13 +69,4 @@ public class Prodotto{
         return id;
     }
 
-    public boolean equals(Object obj) {
-        Prodotto p = (Prodotto)obj;
-        return this.id.equals(p.getId());
-    }
-
-    public int hashCode() {
-         return this.id.hashCode();
-    }
-
-}
+ }

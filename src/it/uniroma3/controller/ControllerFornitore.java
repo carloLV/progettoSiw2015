@@ -49,15 +49,6 @@ public class ControllerFornitore {
 		this.fornitori = facade.getTuttiFornitori();
 		return "visualizzaTuttiFornitori.jsp"; 
 	}
-	
-//
-//	public FacadeFornitore getFacade() {
-//		return facade;
-//	}
-//
-//	public void setFacade(FacadeFornitore facade) {
-//		this.facade = facade;
-//	}
 
 	public Fornitore getFornitore() {
 		return fornitore;

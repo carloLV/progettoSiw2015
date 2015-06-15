@@ -12,8 +12,7 @@
 <title>Registra Prodotto</title>
 </head>
 <body>
-<<<<<<< HEAD
-	<f:view>
+<f:view>
 		<h:form>
 			<div>
 				<label>Nome</label>
