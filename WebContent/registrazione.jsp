@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
 	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
@@ -63,4 +64,36 @@
 		</h:form>
 	</f:view>
 </body>
+=======
+<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap -->
+<!--<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">  -->
+<title>Registrazione</title>
+</head>
+<body>
+<f:view>
+<h:form>
+			<div><label>Nome</label> 
+			<h:inputText value="#{ControllerDipendente.nome}"/> </div> 
+			<div><label>Cognome</label> 
+			<h:inputText value="#{ControllerDipendente.cognome}"/> </div>
+			<div><label>Email</label>
+			<h:inputText value="#{ControllerDipendente.email}"/>  </div>
+			<div><label>Password</label>
+			<h:inputText value="#{ControllerDipendente.pwd1}""/> </div> 
+			<div><label>Password</label>
+			<h:inputText value="#{ControllerDipendente.pwd2}"/> </div>
+			<div><h:commandButton value="Conferma" action="#{ControllerDipendente.creaDipendente}"/>
+			<a href="index.html"><button class "btn">Annulla</button></a></div>
+</h:form>
+</f:view>
+</body>
+>>>>>>> 1d86202cadf5eec1730b820454b71729a2580f0b
 </html>
