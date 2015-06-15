@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -9,19 +10,24 @@
 <title>Fornitori</title>
 </head>
 <body>
-	<h1>Lista fornitori</h1>
-	<table>
-		<tr>
-			<th>email</th>
-			<th>partita Iva</th>
-		</tr>
-		<c:forEach var="fornitore" items="${fornitori}">
-			<tr>
-				<td><a
-					href="<c:url value="/it.uniroma3.controller/fornitore.get?id=${fornitore.email}" />">${fornitore.email}</a></td>
-				<td>${fornitore.partitaIva}</td>
-			</tr>
-		</c:forEach>
-	</table>
+<f:view>
+    <h:form>
+    <h1>Lista fornitori</h1>
+    <table>
+        <tr>
+            <th>email</th>
+            <th>partita Iva</th>
+        </tr>
+        <c:forEach var="fornitore" items="#{controllerFornitore.fornitori}">
+            <tr>
+                <td><h:commandLink action="#{controllerFornitore.findFornitore}" value="#{fornitore.email}">
+            <f:param name="id" value="#{fornitore.id}" />
+        </h:commandLink></td>
+                <td>${fornitore.partitaIva}</td>
+            </tr>
+        </c:forEach>
+    </table>
+    </h:form>
+    </f:view>
 </body>
 </html>
