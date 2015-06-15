@@ -1,1 +1,15 @@
-/build
+/build/
+/bin/
+*.class
+.project
+.metadata
+.settings/
+.classpath
+target/
+local.properties
+.loadpath
+.DS_Store
+Thumbs.db
+Desktop.ini
+<<<<<<< HEAD
+.svn

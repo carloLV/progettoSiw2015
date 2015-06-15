@@ -29,7 +29,7 @@ public class ControllerOrdine {
 	@Column(nullable=false)
 	private Dipendente richiedente;
 	
-	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
+//	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
 	
 	private Date dataApertura;
 	

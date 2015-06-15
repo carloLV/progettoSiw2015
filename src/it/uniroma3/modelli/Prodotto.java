@@ -13,63 +13,63 @@ import javax.persistence.Column;
 //@NamedQuery(name = "findAllProducts", query = "SELECT p FROM Product p")
 public class Prodotto{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	@Column(nullable = false)
-	private String nome;
+    @Column(nullable = false)
+    private String nome;
 
-	private Float prezzo;
-	@Column(length = 2000)
+    private Float prezzo;
+    @Column(length = 2000)
 
-	private String descrizione;
+    private String descrizione;
 
-	Prodotto() {
-	}
+    Prodotto() {
+    }
 
-	Prodotto(String nome, Float prezzo, String descrizione) {
-		this.nome = nome;
-		this.prezzo = prezzo;
-		this.descrizione = descrizione;
-	}
+    Prodotto(String nome, Float prezzo, String descrizione) {
+        this.nome = nome;
+        this.prezzo = prezzo;
+        this.descrizione = descrizione;
+    }
 
 
-	//getter e setter
+    //getter e setter
 
-	public String getNome() {
-		return nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public Float getPrezzo() {
-		return prezzo;
-	}
+    public Float getPrezzo() {
+        return prezzo;
+    }
 
-	public void setPrezzo(Float prezzo) {
-		this.prezzo = prezzo;
-	}
+    public void setPrezzo(Float prezzo) {
+        this.prezzo = prezzo;
+    }
 
-	public String getDescrizione() {
-		return descrizione;
-	}
+    public String getDescrizione() {
+        return descrizione;
+    }
 
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public boolean equals(Object obj) {
+    public boolean equals(Object obj) {
         Prodotto p = (Prodotto)obj;
         return this.id.equals(p.getId());
     }
@@ -77,7 +77,5 @@ public class Prodotto{
     public int hashCode() {
          return this.id.hashCode();
     }
-
-
 
 }
