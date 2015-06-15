@@ -43,6 +43,8 @@
 					action="#{controllerFornitore.creaFornitore}" />
 				<a href="index.html"><button class="btn">Annulla</button></a>
 			</div>
+			<h:commandLink action="#{controllerFornitore.listaFornitori}"
+						value="Elenco Completo" />
 		</h:form>
 	</f:view>
 

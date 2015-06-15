@@ -1,25 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="it">
+<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
-	rel="stylesheet" />
-<link href="${pageContext.request.contextPath}/css/custom.css" rel="stylesheet" />
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"> -->
 <title>Fornitore</title>
 </head>
 <body>
-
 <f:view>
 <h1>${controllerFornitore.fornitore.email}</h1>
 <h2>Dettagli</h2>
-<h4><div>Partita Iva: ${controllerFornitore.fornitore.partitaIva}</div></h4>
-<h4><div>Telefono: ${controllerFornitore.fornitore.telefono}</div></h4>
-<h4><div>Indirizzo: ${controllerFornitore.fornitore.indirizzo}</div></h4>
+<div>Partita iva: ${controllerFornitore.fornitore.partitaIva}</div>
+<div>Telefono: ${controllerFornitore.fornitore.telefono}</div>
+<div>Indirizzo: ${controllerFornitore.fornitore.indirizzo}</div>
 </f:view>
-
 </body>
 </html>

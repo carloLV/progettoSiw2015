@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.servlet.http.HttpSession;
 
 @Stateless(name="facadeF")
 public class FacadeFornitore {
@@ -16,8 +19,7 @@ public class FacadeFornitore {
 	private EntityManager em;
 	
 		
-	public Fornitore creaFornitore(String partitaIva, String indirizzo,
-			String telefono, String email){
+	public Fornitore creaFornitore(String partitaIva, String indirizzo, String telefono, String email){
 		Fornitore f = new Fornitore(partitaIva, email);
 		f.setIndirizzo(indirizzo);
 		f.setTelefono(telefono);
@@ -31,9 +33,16 @@ public class FacadeFornitore {
 	}
 	
 	public List<Fornitore> getTuttiFornitori(){
-		CriteriaQuery<Fornitore> cq = em.getCriteriaBuilder().createQuery(Fornitore.class);
-		cq.select(cq.from(Fornitore.class));
-		List<Fornitore> fornitori = em.createQuery(cq).getResultList();
+//		CriteriaQuery<Fornitore> cq = em.getCriteriaBuilder().createQuery(Fornitore.class);
+//		cq.select(cq.from(Fornitore.class));
+//		List<Fornitore> fornitori = em.createQuery(cq).getResultList();
+//		return fornitori;
+		Query q=this.em.createQuery("SELECT f FROM Fornitore f");
+		List<Fornitore> fornitori=q.getResultList();
+		FacesContext context = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+	
+			session.setAttribute("visualizzaTuttiFornitori", fornitori);
 		return fornitori;
 	}
 	

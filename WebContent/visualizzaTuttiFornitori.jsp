@@ -15,8 +15,7 @@
     <h1>Lista fornitori</h1>
     <table>
         <tr>
-            <th>email</th>
-            <th>partita Iva</th>
+            <th>email</th><th>partita Iva</th>
         </tr>
         <c:forEach var="fornitore" items="#{controllerFornitore.fornitori}">
             <tr>

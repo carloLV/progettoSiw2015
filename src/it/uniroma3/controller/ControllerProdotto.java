@@ -1,14 +1,17 @@
 package it.uniroma3.controller;
 
 import java.util.List;
+
 import javax.ejb.EJB;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
 import it.uniroma3.modelli.*;
 
 
-
+@RequestScoped
 @ManagedBean
 public class ControllerProdotto {
 	
@@ -32,17 +35,19 @@ public class ControllerProdotto {
 	
 	public String listProdotti() {
 		this.prodotti = facadeProdotto.getAllProdotti();
-		return "prodotti"; 
+		return("visualizzaTuttiProdotti.jsp");
+		
 	}
 
 	public String findProdotto() {
 		this.prodotto = facadeProdotto.getProdotto(id);
-		return "prodotto";
+		return ("prodotto.jsp");
 	}
 	
 	public String findProdotto(Long id) {
 		this.prodotto = facadeProdotto.getProdotto(id);
-		return "prodotto";
+		return ("prodotto.jsp");
+//		return "prodotto";
 	}
 
 	public Long getId() {
