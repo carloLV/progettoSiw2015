@@ -10,6 +10,7 @@
 <title>Fornitori</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<f:view>
 		<h:form>
 			<h1>Lista fornitori</h1>
@@ -31,5 +32,25 @@
 			</table>
 		</h:form>
 	</f:view>
+=======
+<f:view>
+    <h:form>
+    <h1>Lista fornitori</h1>
+    <table>
+        <tr>
+            <th>email</th><th>partita Iva</th>
+        </tr>
+        <c:forEach var="fornitore" items="#{controllerFornitore.fornitori}">
+            <tr>
+                <td><h:commandLink action="#{controllerFornitore.findFornitore}" value="#{fornitore.email}">
+            <f:param name="id" value="#{fornitore.id}" />
+        </h:commandLink></td>
+                <td>${fornitore.partitaIva}</td>
+            </tr>
+        </c:forEach>
+    </table>
+    </h:form>
+    </f:view>
+>>>>>>> 00d88e1565206cf71cdeac0a379fed15aece89e0
 </body>
 </html>

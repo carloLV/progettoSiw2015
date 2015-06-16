@@ -23,8 +23,10 @@
 				<a href="scegliOperazione.jsp">
 				<button class="btn">Annulla</button></a> <br>
 			</div>
-			<div><h:commandButton value="Elenco completo"
-					action="#{controllerFornitore.listaFornitori}" /></div>
+			<!-- <div><h:commandButton value="Elenco completo"
+					action="#{controllerFornitore.listaFornitori}" /></div> -->
+					<h:commandLink action="#{controllerFornitore.listaFornitori}"
+						value="Elenco Completo" />
 		</h:form>
 	</f:view>
 </body>

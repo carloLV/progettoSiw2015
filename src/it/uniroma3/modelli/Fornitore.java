@@ -31,11 +31,11 @@ public class Fornitore {
 	
 
 	public Fornitore(String partitaIva, String email) {
-		super();
 		this.partitaIva = partitaIva;
-		this.indirizzo = indirizzo;
-		this.telefono = telefono;
 		this.email = email;
+//		this.indirizzo = indirizzo;
+//		this.telefono = telefono;
+		
 	}
 
 	public Long getId() {

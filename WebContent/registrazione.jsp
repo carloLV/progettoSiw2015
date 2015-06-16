@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00d88e1565206cf71cdeac0a379fed15aece89e0
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
 	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
@@ -21,7 +25,8 @@
 			<div class="jumbotron">
 				<h1>Welcome!</h1><br>
 				<h3>Sali a bordo e inizia a lavorare con noi!</h3>
-				<p><div>
+				<p>
+				<div>
 					<label>Nome</label>
 				<h:inputText value="#{controllerDipendente.nome}" required="true"
 						id="nome" requiredMessage="Parametro obbligatorio" />
@@ -63,4 +68,7 @@
 		</h:form>
 	</f:view>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+>>>>>>> 00d88e1565206cf71cdeac0a379fed15aece89e0

@@ -2,6 +2,10 @@ package it.uniroma3.modelli;
 
 import java.util.List;
 
+import javax.faces.context.FacesContext;
+import javax.persistence.Query;
+import javax.servlet.http.HttpSession;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,10 +33,17 @@ public class FacadeProdotto  {
 	}
 
 	public List<Prodotto> getAllProdotti() {
-		CriteriaQuery<Prodotto> cq = em.getCriteriaBuilder().createQuery(Prodotto.class);
-		cq.select(cq.from(Prodotto.class));
-		List<Prodotto> prodotti = em.createQuery(cq).getResultList();
+		Query q=this.em.createQuery("SELECT p FROM Prodotto p");
+		List<Prodotto> prodotti=q.getResultList();
+		FacesContext context = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+	
+			session.setAttribute("visualizzaTuttiProdotti", prodotti);
 		return prodotti;
+//		CriteriaQuery<Prodotto> cq = em.getCriteriaBuilder().createQuery(Prodotto.class);
+//		cq.select(cq.from(Prodotto.class));
+//		List<Prodotto> prodotti = em.createQuery(cq).getResultList();
+//		return prodotti;
 	}
 
 	public void updateProdotto(Prodotto p) {
