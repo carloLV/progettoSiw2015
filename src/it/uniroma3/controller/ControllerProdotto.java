@@ -34,6 +34,11 @@ public class ControllerProdotto {
 		this.prodotti = facadeProdotto.getAllProdotti();
 		return "prodotti"; 
 	}
+	
+	public String catalogoOrdine(){
+		this.prodotti = facadeProdotto.getAllProdotti();
+		return "inserisciOrdine.jsp";
+	}
 
 	public String findProdotto() {
 		this.prodotto = facadeProdotto.getProdotto(id);

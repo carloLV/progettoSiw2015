@@ -47,7 +47,7 @@
 			</div>
 			<div>
 				<label>Password</label>
-				<h:inputText value="#{controllerDipendente.pwd2}" required="true"
+				<h:inputSecret value="#{controllerDipendente.pwd2}" required="true"
 						id="pwd2" requiredMessage="Parametro obbligatorio" />
 				<h:message for="pwd2" />
 			</div>

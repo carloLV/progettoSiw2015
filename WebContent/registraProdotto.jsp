@@ -28,7 +28,7 @@
 			</div>
 			<div>
 				<label>Descrizione</label>
-				<h:inputText value="#{controllerProdotto.descrizione}"
+				<h:inputTextarea rows="4" value="#{controllerProdotto.descrizione}"
 					id="descrizione" requiredMessage="This parameter is mandatory" />
 				<h:message for="descrizione" />
 			</div>
