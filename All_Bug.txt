@@ -1,0 +1,7 @@
+-Le ricerce all'interno del DB non funzionano. 
+
+-La stampa dei dettagli dei fornitori non funzionano, anche se il codice sembra corretto.
+
+-La creazione degli ordini e delle righe ordine non funziona. Vengono creati nel DB solo gli ordini.
+
+-Evadi ordine non è stato testato e provato a causa del malfunzionamento citato prima.

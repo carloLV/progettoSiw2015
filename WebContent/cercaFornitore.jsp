@@ -9,24 +9,23 @@
 <title>Cerca fornitore</title>
 </head>
 <body>
-<label>Digita la mail del fornitore da cercare o cerca tutti i fornitori presenti</label>
-<f:view>
+	<label>Digita la mail del fornitore da cercare o cerca tutti i
+		fornitori presenti</label>
+	<f:view>
 		<h:form>
 			<div>
 				<label>Email</label>
-				<h:inputText value="#{controllerFornitore.email}"
-					id="email" />
+				<h:inputText value="#{controllerFornitore.email}" id="email" />
 			</div>
 			<div>
 				<h:commandButton value="Cerca"
 					action="#{controllerFornitore.findFornitore}" />
 				<a href="scegliOperazione.jsp">
-				<button class="btn">Annulla</button></a> <br>
+					<button class="btn">Annulla</button>
+				</a> <br>
 			</div>
-			<!-- <div><h:commandButton value="Elenco completo"
-					action="#{controllerFornitore.listaFornitori}" /></div> -->
-					<h:commandLink action="#{controllerFornitore.listaFornitori}"
-						value="Elenco Completo" />
+			<h:commandLink action="#{controllerFornitore.listaFornitori}"
+				value="Elenco Completo" />
 		</h:form>
 	</f:view>
 </body>

@@ -58,9 +58,8 @@ public class Dipendente {
 		this.cognome = cognome;
 	}
 
-	public void confermaOrdine(Ordine o) {
-		System.out.println("Non si dispone delle autorizzazioni per confermare l'ordine. \nContattare l'amministratore.");
-		
+	public boolean isAdmin(){
+		return false;
 	}
 
 }

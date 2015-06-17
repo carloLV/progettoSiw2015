@@ -52,3 +52,14 @@ Il sistema mostra al cliente l'elenco degli suoi ordini
 L'utente chiede il dettaglio di un ordine
 Il sistema mostra il dettaglio dell'ordine
 
+Caso d'uso UC4: inserimento prodotti nel catalogo
+Attore primario: dipendente
+Scenario principale:
+Il dipendente inserisce un nuovo prodotto nel catalogo specificandone i dettagli
+Il sistema registra il prodotto
+I punti precedenti vengono ripetuti fino a che necessario
+Precondizioni: lil dipendente è identificato e autenticato
+
+
+Bug e malfunzionamenti sono riportati nel file All_Bug.txt
+

@@ -17,7 +17,9 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.persistence.Column;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean
 public class ControllerOrdine {
@@ -27,6 +29,26 @@ public class ControllerOrdine {
 	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
+	
+	private Dipendente richiedente;
+	
+	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
+	
+	private Date dataApertura;
+	
+	private Date dataChiusura;
+	
+	private Date dataEvasione;
+	
+	private int quantita;
+	
+	private Prodotto prodotto;
+	
+	private boolean flag;
+	
+
+	private Ordine ordine;
+	
 	
 	public List<RigaOrdine> getRigheOrdine() {
 		return righeOrdine;
@@ -52,28 +74,14 @@ public class ControllerOrdine {
 		this.prodotto = prodotto;
 	}
 
-	@Column(nullable=false)
-	private Dipendente richiedente;
-	
-	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
-	
-	private Date dataApertura;
-	
-	private Date dataChiusura;
-	
-	private Date dataEvasione;
-	
-	private int quantita;
-	
-	private Prodotto prodotto;
-	
-	private boolean flag;
-	
-
-	private Ordine ordine;
 	
 	public String creaOrdine(){
-		this.ordine=facade.creaOrdine(richiedente);
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+		this.richiedente=(Dipendente) session.getAttribute("utente");
+		
+		this.ordine=facade.creaOrdine(this.richiedente);
 		Calendar calendar = new GregorianCalendar();
 		Date dataApertura = calendar.getTime();
 		ordine.setDataApertura(dataApertura);
@@ -98,12 +106,18 @@ public class ControllerOrdine {
 	}
 
 	public String evadiOrdine(){
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+		this.richiedente=(Dipendente) session.getAttribute("utente");
+		if (richiedente.isAdmin()){
 		this.ordine=facade.getOrdine(id);
 		Calendar calendar = new GregorianCalendar();
 		Date dataEvasione = calendar.getTime();
 		ordine.setDataEvasione(dataEvasione);
 		facade.updateOrdine(ordine);
-		return "operazioneEffettuata.jsp";
+		return "operazioneEffettuata.jsp";}
+		else return "Error.jsp";
 	}
 
 	public Date getDataApertura() {
