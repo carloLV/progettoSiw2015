@@ -16,13 +16,18 @@ public class ControllerUtente {
 	
 	private String pwd;
 	
+	private Dipendente user;
+	
 	
 	
 	
 	public String login(){
 		Dipendente d=facade.getDipendente(email);
-		if (d!=null && d.getPwd().equals(pwd))
+		if (d!=null && d.getPwd().equals(pwd)){
+			
 			return ("scegliOperazione.jsp");
+			
+		}
 		else return "ripetiLogin.jsp";
 	}
 

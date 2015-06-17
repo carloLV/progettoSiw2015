@@ -6,9 +6,12 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.servlet.http.HttpSession;
 
 @Stateless(name="facadeO")
 public class FacadeOrdine {
@@ -32,10 +35,12 @@ public class FacadeOrdine {
 	}
 	
 	public List<Ordine> getTuttiOrdini(){
-		CriteriaQuery<Ordine> cq = em.getCriteriaBuilder().createQuery(Ordine.class);
-		cq.select(cq.from(Ordine.class));
-		List<Ordine> dipendenti = em.createQuery(cq).getResultList();
-		return dipendenti;
+		Query q=this.em.createQuery("SELECT p FROM Prodotto p");
+		List<Prodotto> prodotti=q.getResultList();
+		FacesContext context = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+		session.setAttribute("visualizzaTuttiProdotti", prodotti);
+		return prodotti;
 	}
 	
 	public void cancellaOrdine(Long id){
