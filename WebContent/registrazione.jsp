@@ -1,4 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+
+>>>>>>> 00d88e1565206cf71cdeac0a379fed15aece89e0
+>>>>>>> branch 'master' of https://github.com/carloLV/progettoSiw2015.git
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
 	pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
@@ -22,7 +28,8 @@
 			<div class="jumbotron">
 				<h1>Welcome!</h1><br>
 				<h3>Sali a bordo e inizia a lavorare con noi!</h3>
-				<p><div>
+				<p>
+				<div>
 					<label>Nome</label>
 				<h:inputText value="#{controllerDipendente.nome}" required="true"
 						id="nome" requiredMessage="Parametro obbligatorio" />
@@ -48,7 +55,7 @@
 			</div>
 			<div>
 				<label>Password</label>
-				<h:inputText value="#{controllerDipendente.pwd2}" required="true"
+				<h:inputSecret value="#{controllerDipendente.pwd2}" required="true"
 						id="pwd2" requiredMessage="Parametro obbligatorio" />
 				<h:message for="pwd2" />
 			</div>
@@ -64,6 +71,7 @@
 		</h:form>
 	</f:view>
 </body>
+<<<<<<< HEAD
 =======
 <%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
@@ -97,3 +105,9 @@
 </body>
 >>>>>>> 1d86202cadf5eec1730b820454b71729a2580f0b
 </html>
+=======
+<<<<<<< HEAD
+</html>
+=======
+>>>>>>> 00d88e1565206cf71cdeac0a379fed15aece89e0
+>>>>>>> branch 'master' of https://github.com/carloLV/progettoSiw2015.git

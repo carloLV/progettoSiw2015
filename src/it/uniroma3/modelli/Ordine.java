@@ -20,6 +20,7 @@ public class Ordine {
 	@Column(nullable=false)
 	private Dipendente richiedente;
 	
+	@Column
 	private List<RigaOrdine> righeOrdine = new ArrayList<RigaOrdine>();
 	
 	@Column(nullable=false)

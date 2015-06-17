@@ -10,7 +10,7 @@ import javax.persistence.Column;
 
 
 @Entity
-//@NamedQuery(name = "findAllProducts", query = "SELECT p FROM Product p")
+@NamedQuery(name = "visualizzaTuttiProdotti", query = "SELECT p FROM Prodotto p")
 public class Prodotto{
 
     @Id

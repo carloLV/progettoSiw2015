@@ -36,11 +36,11 @@ public class FacadeOrdine {
 	
 	public List<Ordine> getTuttiOrdini(){
 		Query q=this.em.createQuery("SELECT p FROM Prodotto p");
-		List<Prodotto> prodotti=q.getResultList();
+		List<Ordine> ordini=q.getResultList();
 		FacesContext context = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
-		session.setAttribute("visualizzaTuttiProdotti", prodotti);
-		return prodotti;
+		session.setAttribute("visualizzaTuttiProdotti", ordini);
+		return ordini;
 	}
 	
 	public void cancellaOrdine(Long id){

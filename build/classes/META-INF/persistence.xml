@@ -15,7 +15,7 @@
 	<properties>
 			<property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
 			<property name="openjpa.ConnectionUserName" value="postgres" />
-			<property name="openjpa.ConnectionPassword" value="postgres" />
+			<property name="openjpa.ConnectionPassword" value="Giulia92" />
 			<property name="openjpa.ConnectionURL" value="dbc:postgresql://localhost:5432/dbProgetto" />
 			<property name="openjpa.jdbc.DBDictionary" value="postgres" />
   			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,ForeignKeys=true)" /> 

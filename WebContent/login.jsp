@@ -31,7 +31,7 @@
 				</div>
 				<div class="form-group">
 					<label>Password</label>
-					<h:inputText value="#{controllerUtente.pwd}" required="true"
+					<h:inputSecret value="#{controllerUtente.pwd}" required="true"
 						id="pwd" requiredMessage="Parametro obbligatorio" />
 					<h:message for="pwd" />
 				</div>

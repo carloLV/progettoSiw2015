@@ -28,7 +28,7 @@
 			</div>
 			<div>
 				<label>Descrizione</label>
-				<h:inputText value="#{controllerProdotto.descrizione}"
+				<h:inputTextarea rows="4" value="#{controllerProdotto.descrizione}"
 					id="descrizione" requiredMessage="This parameter is mandatory" />
 				<h:message for="descrizione" />
 			</div>
@@ -37,6 +37,8 @@
 					action="#{controllerProdotto.creaProdotto}" />
 				<a href="index.html"><button class="btn">Annulla</button></a>
 			</div>
+			<h:commandLink action="#{controllerProdotto.listProdotti}"
+						value="tutti i prodotti" />
 		</h:form>
 	</f:view>
 </body>

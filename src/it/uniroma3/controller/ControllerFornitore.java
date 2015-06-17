@@ -8,7 +8,9 @@ import it.uniroma3.modelli.Fornitore;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 
+@RequestScoped
 @ManagedBean
 public class ControllerFornitore {
 	
@@ -29,7 +31,7 @@ public class ControllerFornitore {
 	private List<Fornitore> fornitori;
 	
 	public String creaFornitore(){
-		fornitore = facade.creaFornitore(partitaIva, indirizzo, telefono, email);
+		this.fornitore = facade.creaFornitore(partitaIva, indirizzo, telefono, email);
 		return ("operazioneEffettuata.jsp");
 		
 	}
@@ -46,8 +48,8 @@ public class ControllerFornitore {
 	}
 	
 	public String listaFornitori() {
-		this.fornitori = facade.getTuttiFornitori();
-		return "visualizzaTuttiFornitori.jsp"; 
+		this.setFornitori(facade.getTuttiFornitori());
+		return ("visualizzaTuttiFornitori.jsp"); 
 	}
 
 	public Fornitore getFornitore() {
@@ -88,6 +90,14 @@ public class ControllerFornitore {
 
 	public void setFornitore(Fornitore fornitore) {
 		this.fornitore = fornitore;
+	}
+
+	public List<Fornitore> getFornitori() {
+		return fornitori;
+	}
+
+	public void setFornitori(List<Fornitore> fornitori) {
+		this.fornitori = fornitori;
 	}
 	
 	
